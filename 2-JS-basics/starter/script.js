@@ -39,5 +39,29 @@ isMarried = false;
 console.log(firstName + ' is a ' + age + ' year old ' + job + 
 '. Is he married? ' + isMarried);
 
+//math operators
+var year = 2019;
+var yearJohn = year - age;
 
-//Variable mutation
+console.log(yearJohn);
+
+
+//Logical operatios
+// > <  >=  <= 
+
+
+
+//typeof operator
+console.log(typeof year);
+
+var JohnTeam = [89, 120, 103];
+var mikeTeam = [116, 94, 123];
+
+var johnScore,mikeScore;
+johnScore = mikeScore = 0;
+for (let i = 0;i < JohnTeam.length;i++){
+    johnScore += JohnTeam[i];
+    mikeScore += mikeTeam[i];
+}
+
+console.log(johnScore/JohnTeam.length ? johnScore > mikeScore : mikeScore/mikeTeam.length);
