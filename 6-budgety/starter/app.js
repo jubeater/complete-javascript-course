@@ -22,7 +22,18 @@ var budgetController = (function() {
             exp: 0,
             inc: 0
         }
-    }
+    };
+
+    return {
+        addItem: function(type, des, val) {
+            var ID, newItem;
+            ID = data.allItems[type].length === 0 ? 0 : data.allItems[type][data.allItems[type].length - 1].id + 1;
+            newItem = type === 'exp' ? new Expense(ID, des, val) : new Income(ID, des, val);
+            data.allItems[type].push(newItem);
+            data.totals[type] += val;
+            return newItem;
+        }
+    };
 })();
 
 
@@ -44,6 +55,11 @@ var UIController = (function() {
                 value: document.querySelector(DOMstrings.inputValue).value
             };
         },
+
+        addListItem: function(obj, type) {
+            
+        },
+
         getDOMstrings: function() {
             return DOMstrings;
         }
@@ -68,10 +84,11 @@ var controller = (function(budgetCtrl, UICtrl) {
     };
 
     var ctrlAddItem = function() {
+        var input, newItem;
         //1. get the field input data
-        var input = UICtrl.getInput();
+        input = UICtrl.getInput();
         //2. add the item to the budget controller
-
+        newItem = budgetController.addItem(input.type, input.description, input.value);
         //3. add the item to the UI
 
         //4. calculate the budget
