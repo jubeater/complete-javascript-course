@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "tt": "webpack-dev-server --mode production --open"
   },
   "author": "jubeater",
   "license": "MIT",
@@ -22,6 +23,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "fractional": "^1.0.0",
+    "uniqid": "^5.0.3"
   }
 }
